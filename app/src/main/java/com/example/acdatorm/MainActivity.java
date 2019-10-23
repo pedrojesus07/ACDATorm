@@ -63,7 +63,8 @@ public class MainActivity extends AppCompatActivity {
         Usuario usuario = new Usuario();
         usuario.setApellidos("Perez Lopez");
         usuario.setNombre("Baldomero");
-        db.usuarioDao().insert(usuario);
+        //db.usuarioDao().insert(usuario);
+        new HebraInsertDb().execute(usuario);
     }
 
     private void saludar(){
@@ -79,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Integer aInteger) {
             super.onPostExecute(aInteger);
+            Log.v("xyz","resultado: "+ aInteger);
         }
 
         @Override
