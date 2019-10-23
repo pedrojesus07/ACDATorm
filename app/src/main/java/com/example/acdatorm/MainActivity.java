@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected Integer doInBackground(Usuario... usuarios) {
             int resultado = 0;
-            if(usuarios.length > 0 && usuarios[0] != null) {
+            if(usuarios != null && usuarios.length > 0 && usuarios[0] != null) {
                 db.usuarioDao().insert(usuarios[0]);
                 resultado = usuarios[0].getId();
             }
